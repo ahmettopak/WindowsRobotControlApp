@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E285B598-3C4B-4107-AB1F-BCB411419B8D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsRobotControl</RootNamespace>
+    <AssemblyName>WindowsRobotControl</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectInput, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DirectInput.4.2.0\lib\net45\SharpDX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XInput, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.XInput.4.2.0\lib\net45\SharpDX.XInput.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vlc.DotNet.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.3.1.0\lib\net45\Vlc.DotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.3.1.0\lib\net45\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Forms.3.1.0\lib\net45\Vlc.DotNet.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\aim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\aim_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\alert_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\arm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\background_dialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\button_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\calibration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\capture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\change_toggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\change_toggle_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\close_model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\cros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ddiagonal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\diagonal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\dialogbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\drive_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\elektrolandlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ethernet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ethernet_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\exit_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\eye_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\fire_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\fire_light_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\full_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\fullsize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\fullsize_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\gamepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\gamepad_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\gear_level.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\gear_seekbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\gearrseek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\high.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ic_pin_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ic_pin_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\infromation_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ir_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ir_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\joystick_circle_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\joystick_dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\joystick_dot_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logomin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\mic_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\microphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\open_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\open_model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\pal_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\pal_down_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\pal_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\pal_up_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\panel_battery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\power_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ptz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\red_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\refresh_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\resetbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\resi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\robot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\robot_battery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\screen_record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\screen_record_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\screenshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\seekbar_line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\self_test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\selftest_all_good.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\selftest_big_problem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\selftest_little_problem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\selftest_no_problem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shifter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shiftter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shotgun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shotgun_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\smallogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\sound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\sound_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\splash.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\warning_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\warningg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\wawe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\zoom_in_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\zoom_out_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\zoomin_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\zoomin_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\zoomout_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\zoomout_red.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
