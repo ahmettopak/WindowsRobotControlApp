@@ -15,24 +15,20 @@ namespace WindowsRobotControl
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
-            InitializeCombobox();
+            InitializeCameraComboBox();
         }
-        string[] cameraUrl = {
-                "rtsp://192.168.1.10:554/user=admin&password=&channel=1&stream=0.sdp?",
-                "rtsp://192.168.1.10:554/user=admin&password=&channel=2&stream=0.sdp?",
-                "rtsp://192.168.1.10:554/user=admin&password=&channel=3&stream=0.sdp?",
-                "rtsp://192.168.1.10:554/user=admin&password=&channel=4&stream=0.sdp?",
-                "rtsp://192.168.1.10:554/user=admin&password=&channel=5&stream=0.sdp?"
-            };
+
         private void Form1_Load(object sender, EventArgs e)
         {
             InitializeVlcControl();
             leftCameraComboBox.SelectedIndex = 0;
             rightCameraComboBox.SelectedIndex = 0;
 
+            ScreenUtil = new ScreenUtil(this);
             //InitializeController();
             //SetupControllerTimer();
 
@@ -180,7 +176,17 @@ namespace WindowsRobotControl
 
         #endregion
 
-        private void InitializeCombobox()
+
+        #region Rtsp Stream
+
+        string[] cameraUrl = {
+                "rtsp://192.168.1.10:554/user=admin&password=&channel=1&stream=0.sdp?",
+                "rtsp://192.168.1.10:554/user=admin&password=&channel=2&stream=0.sdp?",
+                "rtsp://192.168.1.10:554/user=admin&password=&channel=3&stream=0.sdp?",
+                "rtsp://192.168.1.10:554/user=admin&password=&channel=4&stream=0.sdp?",
+                "rtsp://192.168.1.10:554/user=admin&password=&channel=5&stream=0.sdp?"
+            };
+        private void InitializeCameraComboBox()
         {
             string[] cameraName = { "Ön", "Arka", "Nişan", "Kıskaç", "PTZ" };
 
@@ -225,5 +231,40 @@ namespace WindowsRobotControl
         {
 
         }
+
+        #endregion
+
+
+        #region Screen Utils
+        ScreenUtil ScreenUtil;
+        bool isRecordStart = false;
+        private void screenShotButton_Click(object sender, EventArgs e)
+        {
+            ScreenUtil.checkScreenShot();
+        }
+
+        private void galleryButton_Click(object sender, EventArgs e)
+        {
+            ScreenUtil.openGallery();
+        }
+
+        private async void screenRecordButton_Click(object sender, EventArgs e)
+        {
+            if (isRecordStart)
+            {
+                await videoCapture1.StopAsync();
+                isRecordStart = false;
+                MessageBox.Show("Ekran Kaydı Kayıt Edildi");
+            }
+            else
+            {
+                ScreenUtil.initScreenRecord();
+                await videoCapture1.StartAsync();
+                isRecordStart = true;
+
+            }
+
+        } 
+        #endregion
     }
 }
