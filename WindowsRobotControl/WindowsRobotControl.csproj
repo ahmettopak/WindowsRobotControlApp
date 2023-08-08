@@ -159,6 +159,9 @@
     <Reference Include="VisioForge.Core, Version=15.5.94.0, Culture=neutral, PublicKeyToken=5873e863f1bcda5d, processorArchitecture=MSIL">
       <HintPath>..\packages\VisioForge.DotNet.Core.15.5.94\lib\net472\VisioForge.Core.dll</HintPath>
     </Reference>
+    <Reference Include="VisioForge.DotNet.VideoCapture, Version=15.5.94.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.VideoCapture.15.5.94\lib\net472\VisioForge.DotNet.VideoCapture.dll</HintPath>
+    </Reference>
     <Reference Include="VisioForge.Libs, Version=15.5.94.0, Culture=neutral, PublicKeyToken=2ff49422ec313cd3, processorArchitecture=MSIL">
       <HintPath>..\packages\VisioForge.DotNet.Core.15.5.94\lib\net472\VisioForge.Libs.dll</HintPath>
     </Reference>
@@ -531,8 +534,18 @@
     <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
     <Error Condition="!Exists('..\packages\Sentry.3.33.1\build\Sentry.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sentry.3.33.1\build\Sentry.targets'))" />
     <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.Base.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.MP4.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets'))" />
   </Target>
   <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
   <Import Project="..\packages\Sentry.3.33.1\build\Sentry.targets" Condition="Exists('..\packages\Sentry.3.33.1\build\Sentry.targets')" />
   <Import Project="..\packages\VisioForge.DotNet.Core.Redist.Base.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x86.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x86.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x64.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.MP4.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x86.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x86.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" />
 </Project>

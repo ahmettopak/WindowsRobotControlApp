@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VisioForge.DotNet.VideoCapture</name>
+    </assembly>
+    <members>
+        <member name="M:VisioForge.DotNet.VideoCapture.VideoCaptureCoreX.#ctor(Android.App.Activity,VisioForge.Core.Types.PlatformType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VisioForge.DotNet.VideoCapture.VideoCaptureCoreX" /> class.
+            </summary>
+            <param name="platform">The platform.</param>
+        </member>
+        <member name="M:VisioForge.DotNet.VideoCapture.VideoCaptureCoreX.#ctor(VisioForge.Core.Types.IVideoView,Android.App.Activity,VisioForge.Core.Types.PlatformType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VisioForge.DotNet.VideoCapture.VideoCaptureCoreX" /> class.
+            </summary>
+            <param name="videoView">The video view.</param>
+            <param name="platform">The platform.</param>
+        </member>
+    </members>
+</doc>
