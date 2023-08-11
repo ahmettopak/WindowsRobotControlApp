@@ -6,20 +6,29 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Vlc.DotNet.Forms;
+using WindowsRobotControl.udp;
 
 namespace WindowsRobotControl
 {
     public partial class Form1 : Form
     {
-        
+    
+
+        UdpReceiver udpReceiver;
+        UdpClient udpClient;
         public Form1()
         {
             InitializeComponent();
             InitializeCameraComboBox();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,6 +38,10 @@ namespace WindowsRobotControl
             rightCameraComboBox.SelectedIndex = 0;
 
             ScreenUtil = new ScreenUtil(this);
+            udpClient = new UdpClient();
+            udpReceiver = new UdpReceiver();
+            udpReceiver.StartListening();
+            Utils.Utils.RefreshBatteryInfo();
             //InitializeController();
             //SetupControllerTimer();
 
@@ -264,7 +277,13 @@ namespace WindowsRobotControl
 
             }
 
-        } 
+        }
         #endregion
+
+
+       
+
+
+
     }
 }
