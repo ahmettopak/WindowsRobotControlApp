@@ -199,7 +199,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenUtil.cs" />
+    <Compile Include="Utils\ComputerBatteryController.cs" />
+    <Compile Include="Utils\ScreenUtil.cs" />
     <Compile Include="udp\DataClass.cs" />
     <Compile Include="udp\UdpReceiver.cs" />
     <Compile Include="udp\UdpSender.cs" />

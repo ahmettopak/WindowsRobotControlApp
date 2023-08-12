@@ -15,6 +15,7 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Vlc.DotNet.Forms;
 using WindowsRobotControl.udp;
+using WindowsRobotControl.Utils;
 
 namespace WindowsRobotControl
 {
@@ -23,7 +24,8 @@ namespace WindowsRobotControl
     
 
         UdpReceiver udpReceiver;
-        UdpClient udpClient;
+        ComputerBatteryController computerBatteryController;
+        
         public Form1()
         {
             InitializeComponent();
@@ -34,14 +36,14 @@ namespace WindowsRobotControl
         private void Form1_Load(object sender, EventArgs e)
         {
             InitializeVlcControl();
-            leftCameraComboBox.SelectedIndex = 0;
-            rightCameraComboBox.SelectedIndex = 0;
+            
 
             ScreenUtil = new ScreenUtil(this);
-            udpClient = new UdpClient();
+            computerBatteryController = new ComputerBatteryController(this);
+        
             udpReceiver = new UdpReceiver();
             udpReceiver.StartListening();
-            Utils.Utils.RefreshBatteryInfo();
+            
             //InitializeController();
             //SetupControllerTimer();
 
@@ -198,7 +200,8 @@ namespace WindowsRobotControl
                 "rtsp://192.168.1.10:554/user=admin&password=&channel=3&stream=0.sdp?",
                 "rtsp://192.168.1.10:554/user=admin&password=&channel=4&stream=0.sdp?",
                 "rtsp://192.168.1.10:554/user=admin&password=&channel=5&stream=0.sdp?"
-            };
+        };
+
         private void InitializeCameraComboBox()
         {
             string[] cameraName = { "Ön", "Arka", "Nişan", "Kıskaç", "PTZ" };
@@ -215,6 +218,8 @@ namespace WindowsRobotControl
             {
                 rightCameraComboBox.Items.Add(value);
             }
+            leftCameraComboBox.SelectedIndex = 0;
+            rightCameraComboBox.SelectedIndex = 0;
 
 
         }
@@ -267,6 +272,7 @@ namespace WindowsRobotControl
             {
                 await videoCapture1.StopAsync();
                 isRecordStart = false;
+                screenRecordButton.BackgroundImage = Properties.Resources.screen_record;
                 MessageBox.Show("Ekran Kaydı Kayıt Edildi");
             }
             else
@@ -274,6 +280,7 @@ namespace WindowsRobotControl
                 ScreenUtil.initScreenRecord();
                 await videoCapture1.StartAsync();
                 isRecordStart = true;
+                screenRecordButton.BackgroundImage = Properties.Resources.screen_record_red;
 
             }
 
