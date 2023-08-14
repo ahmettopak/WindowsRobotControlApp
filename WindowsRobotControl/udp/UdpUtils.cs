@@ -34,15 +34,40 @@ namespace WindowsRobotControl.udp
             return false;
         }
 
+        public static bool ValidateReceivePacket(byte[] data)
+        {
+
+            if (data[0]==DataClass.R && data[1] == DataClass.C && ValidateChecksum(data[2], data[3], data[4], data[5]))
+            {
+                return true;
+            }
+            
+            return false;
+        }
+
         public static byte GenerateChecksum(byte id, byte d0, byte d1)
         {
             return (byte)((id + d0 + d1) % 256);
         }
 
 
-        public string ByteToHex(byte value)
+        public static string ToHex(byte value)
         {
             return value.ToString("X2");
+        }
+
+        public static string ToHex(int value)
+        {
+            return value.ToString("X2");
+        }
+        public static int ToInt(byte value)
+        {
+            return Convert.ToInt32(value);
+        }
+
+        public static int ToInt(string value)
+        {
+             return int.Parse(value, System.Globalization.NumberStyles.HexNumber);
         }
 
         public static string[] ByteArrayToHexArray(byte[] byteArray)

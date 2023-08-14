@@ -44,8 +44,7 @@ namespace WindowsRobotControl.Utils {
 
                     batteryStatus = batteryStatus == "2" ? "Şarj Ediliyor" : "Şarj Edilmiyor";
                     string health = batteryHealth == "OK" ? "Sağlıklı" : "Değil";
-                    MessageBox.Show(batteryLevel);
-                    form1.panelBatteryButton.Text = batteryLevel + batteryStatus;
+                    form1.panelBatteryButton.Text = "%"+ batteryLevel;
                 }
 
             }

@@ -317,14 +317,14 @@
             this.robotBatteryButton.BackgroundImage = global::WindowsRobotControl.Properties.Resources.robot_battery;
             this.robotBatteryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.robotBatteryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.robotBatteryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.robotBatteryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.robotBatteryButton.ForeColor = System.Drawing.Color.Lime;
             this.robotBatteryButton.Location = new System.Drawing.Point(1844, 9);
             this.robotBatteryButton.Name = "robotBatteryButton";
             this.robotBatteryButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 25);
             this.robotBatteryButton.Size = new System.Drawing.Size(62, 84);
             this.robotBatteryButton.TabIndex = 8;
-            this.robotBatteryButton.Text = "%100";
+            this.robotBatteryButton.Text = "??";
             this.robotBatteryButton.UseVisualStyleBackColor = false;
             // 
             // panelBatteryButton
@@ -333,13 +333,14 @@
             this.panelBatteryButton.BackgroundImage = global::WindowsRobotControl.Properties.Resources.panel_battery;
             this.panelBatteryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelBatteryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.panelBatteryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelBatteryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelBatteryButton.ForeColor = System.Drawing.Color.Lime;
             this.panelBatteryButton.Location = new System.Drawing.Point(1912, 9);
             this.panelBatteryButton.Name = "panelBatteryButton";
             this.panelBatteryButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 25);
             this.panelBatteryButton.Size = new System.Drawing.Size(62, 84);
             this.panelBatteryButton.TabIndex = 9;
+            this.panelBatteryButton.Text = "??";
             this.panelBatteryButton.UseVisualStyleBackColor = false;
             // 
             // Form1
@@ -347,7 +348,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ClientSize = new System.Drawing.Size(1924, 1033);
+            this.ClientSize = new System.Drawing.Size(2044, 1033);
             this.Controls.Add(this.panelBatteryButton);
             this.Controls.Add(this.robotBatteryButton);
             this.Controls.Add(this.listBox1);
@@ -389,7 +390,7 @@
         private System.Windows.Forms.Button screenShotButton;
         private System.Windows.Forms.Button galleryButton;
         public VisioForge.Controls.UI.WinForms.VideoCapture videoCapture1;
-        private System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.Button robotBatteryButton;
         public System.Windows.Forms.Button panelBatteryButton;
     }

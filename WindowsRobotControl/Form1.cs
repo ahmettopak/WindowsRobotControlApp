@@ -41,7 +41,7 @@ namespace WindowsRobotControl
             ScreenUtil = new ScreenUtil(this);
             computerBatteryController = new ComputerBatteryController(this);
         
-            udpReceiver = new UdpReceiver();
+            udpReceiver = new UdpReceiver(this);
             udpReceiver.StartListening();
             
             //InitializeController();
