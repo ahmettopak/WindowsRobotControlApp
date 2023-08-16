@@ -316,58 +316,93 @@ namespace WindowsRobotControl
 
         // button control
         #endregion
+
         private void DeselectButton(Button button)
         {
+
+            if (button == turretButton)
+            {
+                isTurret = false;
+
+            }
+            else if (button == shoulderButton)
+            {
+                isShoulder = false;
+            }
+            else if (button == elbowButton)
+            {
+                isElbow = false;
+            }
+            else if (button == wristButton)
+            {
+                isWrist = false;
+            }
+            else if (button == clampButton)
+            {
+                isClamp = false;
+            }
+            else if (button == ptzButton)
+            {
+                isPtz = false;
+            }
+
             button.BackColor = Color.Lime;
             button.ForeColor = Color.Black;
         }
-
         private void SelectButton(Button button)
         {
+            if (button == turretButton)
+            {
+                isTurret = false;
+
+            }
+            else if (button == shoulderButton)
+            {
+                isShoulder = true;
+            }
+            else if (button == elbowButton)
+            {
+                isElbow = true;
+            }
+            else if (button == wristButton)
+            {
+                isWrist = true;
+            }
+            else if (button == clampButton)
+            {
+                isClamp = true;
+            }
+            else if (button == ptzButton)
+            {
+                isPtz = true;
+            }
             button.BackColor = Color.Red;
             button.ForeColor = Color.White;
         }
         private void deselectShoulderGroup()
         {
             DeselectButton(turretButton);
-            isTurret = false;
             DeselectButton(shoulderButton);
-            isShoulder = false;
             DeselectButton(elbowButton);
-            isElbow = false;
         }
-
         private void deselectWristGroup()
         {
             DeselectButton(clampButton);
-            isClamp = false;
-            DeselectButton(parkmodeButton);
-            isPtz = false;
             DeselectButton(ptzButton);
-            isParkMode = false;
             DeselectButton(wristButton);
-            isWrist = false;
         }
         private void turretButton_Click(object sender, EventArgs e)
         {
             if (!isTurret)
             {
                 SelectButton(turretButton);
-
             }
             else
             {
-
                 DeselectButton(turretButton);
-
             }
             deselectWristGroup();
-
-            isTurret = !isTurret;
-
         }
-
-
         private void shoulderButton_Click(object sender, EventArgs e)
         {
             if (!isShoulder)
@@ -380,9 +415,6 @@ namespace WindowsRobotControl
 
             }
             deselectWristGroup();
-
-            isShoulder = !isShoulder;
-
         }
         private void elbowButton_Click(object sender, EventArgs e)
         {
@@ -396,11 +428,7 @@ namespace WindowsRobotControl
                 DeselectButton(elbowButton);
             }
             deselectWristGroup();
-
-            isElbow = !isElbow;
         }
-
-
         private void clampButton_Click(object sender, EventArgs e)
         {
 
@@ -415,9 +443,11 @@ namespace WindowsRobotControl
 
             }
             deselectShoulderGroup();
+            DeselectButton(wristButton);
+            DeselectButton(ptzButton);
 
-
-            isClamp = !isClamp;
+            
+            
         }
         private void ptzButton_Click(object sender, EventArgs e)
         {
@@ -434,47 +464,22 @@ namespace WindowsRobotControl
 
             }
             deselectShoulderGroup();
-
-            isPtz = !isPtz;
+            DeselectButton(wristButton);
+            DeselectButton(clampButton);
         }
-
-        private void parkmodeButton_Click(object sender, EventArgs e)
-        {
-            if (!isParkMode)
-            {
-                SelectButton(ptzButton);
-
-
-            }
-            else
-            {
-
-                DeselectButton(ptzButton);
-
-            }
-            deselectShoulderGroup();
-
-            isParkMode = !isParkMode;
-        }
-
         private void wristButton_Click(object sender, EventArgs e)
         {
             if (!isWrist)
             {
                 SelectButton(wristButton);
-
             }
             else
             {
-
                 DeselectButton(wristButton);
-
-
             }
-            isWrist = !isWrist;
             deselectShoulderGroup();
-
-
+            DeselectButton(ptzButton);
+            DeselectButton(clampButton);
         }
     }
 }

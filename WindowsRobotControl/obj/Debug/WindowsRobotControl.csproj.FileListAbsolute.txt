@@ -404,7 +404,6 @@ C:\Users\devah\Desktop\WindowsRobotControlApp\WindowsRobotControl\bin\Debug\Visi
 C:\Users\devah\Desktop\WindowsRobotControlApp\WindowsRobotControl\bin\Debug\VisioForge.Libs.xml
 C:\Users\devah\Desktop\WindowsRobotControlApp\WindowsRobotControl\bin\Debug\VisioForge.Libs.External.xml
 C:\Users\devah\Desktop\WindowsRobotControlApp\WindowsRobotControl\obj\Debug\WindowsRobotControl.csproj.AssemblyReference.cache
-C:\Users\devah\Desktop\WindowsRobotControlApp\WindowsRobotControl\obj\Debug\WindowsRobotControl.csproj.SuggestedBindingRedirects.cache
 C:\Users\devah\Desktop\WindowsRobotControlApp\WindowsRobotControl\obj\Debug\WindowsRobotControl.Form1.resources
 C:\Users\devah\Desktop\WindowsRobotControlApp\WindowsRobotControl\obj\Debug\WindowsRobotControl.Properties.Resources.resources
 C:\Users\devah\Desktop\WindowsRobotControlApp\WindowsRobotControl\obj\Debug\WindowsRobotControl.csproj.GenerateResource.cache
