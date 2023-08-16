@@ -16,12 +16,22 @@ using System.Windows.Forms;
 using Vlc.DotNet.Forms;
 using WindowsRobotControl.udp;
 using WindowsRobotControl.Utils;
+using static  System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using Button = System.Windows.Forms.Button;
 
 namespace WindowsRobotControl
 {
     public partial class Form1 : Form
     {
-    
+        private bool isTurret = true;
+        private bool isShoulder = true;
+        private bool isElbow = true;
+        private bool isClamp = true;
+        private bool isPtz = true;
+        private bool isParkMode = true;
+        private bool isWrist = true;
+
+
 
         UdpReceiver udpReceiver;
         ComputerBatteryController computerBatteryController;
@@ -32,6 +42,21 @@ namespace WindowsRobotControl
             InitializeCameraComboBox();
 
         }
+
+     
+
+
+
+
+  
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -51,6 +76,8 @@ namespace WindowsRobotControl
             //panel1.SendToBack();
             //panel1.Size = this.ClientSize;
         }
+
+
 
         #region VlcStream
 
@@ -74,6 +101,7 @@ namespace WindowsRobotControl
         "--live-caching=0",
         "--no-overlay",
         "--clock-jitter=0"
+
     };
 
 
@@ -285,12 +313,168 @@ namespace WindowsRobotControl
             }
 
         }
+
+        // button control
         #endregion
+        private void DeselectButton(Button button)
+        {
+            button.BackColor = Color.Lime;
+            button.ForeColor = Color.Black;
+        }
+
+        private void SelectButton(Button button)
+        {
+            button.BackColor = Color.Red;
+            button.ForeColor = Color.White;
+        }
+        private void deselectShoulderGroup()
+        {
+            DeselectButton(turretButton);
+            isTurret = false;
+            DeselectButton(shoulderButton);
+            isShoulder = false;
+            DeselectButton(elbowButton);
+            isElbow = false;
+        }
+
+        private void deselectWristGroup()
+        {
+            DeselectButton(clampButton);
+            isClamp = false;
+            DeselectButton(parkmodeButton);
+            isPtz = false;
+            DeselectButton(ptzButton);
+            isParkMode = false;
+            DeselectButton(wristButton);
+            isWrist = false;
+        }
+        private void turretButton_Click(object sender, EventArgs e)
+        {
+            if (!isTurret)
+            {
+                SelectButton(turretButton);
+
+            }
+            else
+            {
+
+                DeselectButton(turretButton);
+
+            }
+            deselectWristGroup();
+
+            isTurret = !isTurret;
+
+        }
 
 
-       
+        private void shoulderButton_Click(object sender, EventArgs e)
+        {
+            if (!isShoulder)
+            {
+                SelectButton(shoulderButton);
+            }
+            else
+            {
+                DeselectButton(shoulderButton);
+
+            }
+            deselectWristGroup();
+
+            isShoulder = !isShoulder;
+
+        }
+        private void elbowButton_Click(object sender, EventArgs e)
+        {
+            if (!isElbow)
+            {
+                SelectButton(elbowButton);
+
+            }
+            else
+            {
+                DeselectButton(elbowButton);
+            }
+            deselectWristGroup();
+
+            isElbow = !isElbow;
+        }
 
 
+        private void clampButton_Click(object sender, EventArgs e)
+        {
 
+            if (!isClamp)
+            {
+                SelectButton(clampButton);
+
+            }
+            else
+            {
+                DeselectButton(clampButton);
+
+            }
+            deselectShoulderGroup();
+
+
+            isClamp = !isClamp;
+        }
+        private void ptzButton_Click(object sender, EventArgs e)
+        {
+            if (!isPtz)
+            {
+                SelectButton(ptzButton);
+
+            }
+            else
+
+            {
+
+                DeselectButton(ptzButton);
+
+            }
+            deselectShoulderGroup();
+
+            isPtz = !isPtz;
+        }
+
+        private void parkmodeButton_Click(object sender, EventArgs e)
+        {
+            if (!isParkMode)
+            {
+                SelectButton(ptzButton);
+
+
+            }
+            else
+            {
+
+                DeselectButton(ptzButton);
+
+            }
+            deselectShoulderGroup();
+
+            isParkMode = !isParkMode;
+        }
+
+        private void wristButton_Click(object sender, EventArgs e)
+        {
+            if (!isWrist)
+            {
+                SelectButton(wristButton);
+
+            }
+            else
+            {
+
+                DeselectButton(wristButton);
+
+
+            }
+            isWrist = !isWrist;
+            deselectShoulderGroup();
+
+
+        }
     }
 }

@@ -44,6 +44,13 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.robotBatteryButton = new System.Windows.Forms.Button();
             this.panelBatteryButton = new System.Windows.Forms.Button();
+            this.shoulderButton = new System.Windows.Forms.Button();
+            this.elbowButton = new System.Windows.Forms.Button();
+            this.turretButton = new System.Windows.Forms.Button();
+            this.clampButton = new System.Windows.Forms.Button();
+            this.parkmodeButton = new System.Windows.Forms.Button();
+            this.ptzButton = new System.Windows.Forms.Button();
+            this.wristButton = new System.Windows.Forms.Button();
             this.leftVideoPanel.SuspendLayout();
             this.rightVideoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,9 +60,10 @@
             // 
             this.leftVideoPanel.Controls.Add(this.leftFullSizeButton);
             this.leftVideoPanel.Controls.Add(this.leftCameraComboBox);
-            this.leftVideoPanel.Location = new System.Drawing.Point(12, 99);
+            this.leftVideoPanel.Location = new System.Drawing.Point(9, 80);
+            this.leftVideoPanel.Margin = new System.Windows.Forms.Padding(2);
             this.leftVideoPanel.Name = "leftVideoPanel";
-            this.leftVideoPanel.Size = new System.Drawing.Size(1000, 558);
+            this.leftVideoPanel.Size = new System.Drawing.Size(750, 453);
             this.leftVideoPanel.TabIndex = 1;
             // 
             // leftFullSizeButton
@@ -65,9 +73,10 @@
             this.leftFullSizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.leftFullSizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.leftFullSizeButton.ForeColor = System.Drawing.Color.Transparent;
-            this.leftFullSizeButton.Location = new System.Drawing.Point(136, 3);
+            this.leftFullSizeButton.Location = new System.Drawing.Point(102, 2);
+            this.leftFullSizeButton.Margin = new System.Windows.Forms.Padding(2);
             this.leftFullSizeButton.Name = "leftFullSizeButton";
-            this.leftFullSizeButton.Size = new System.Drawing.Size(50, 50);
+            this.leftFullSizeButton.Size = new System.Drawing.Size(38, 41);
             this.leftFullSizeButton.TabIndex = 1;
             this.leftFullSizeButton.UseVisualStyleBackColor = false;
             this.leftFullSizeButton.Click += new System.EventHandler(this.leftFullSizeButton_Click);
@@ -77,9 +86,10 @@
             this.leftCameraComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.leftCameraComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.leftCameraComboBox.FormattingEnabled = true;
-            this.leftCameraComboBox.Location = new System.Drawing.Point(3, 3);
+            this.leftCameraComboBox.Location = new System.Drawing.Point(2, 2);
+            this.leftCameraComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.leftCameraComboBox.Name = "leftCameraComboBox";
-            this.leftCameraComboBox.Size = new System.Drawing.Size(130, 44);
+            this.leftCameraComboBox.Size = new System.Drawing.Size(98, 37);
             this.leftCameraComboBox.TabIndex = 0;
             this.leftCameraComboBox.SelectedIndexChanged += new System.EventHandler(this.leftCameraComboBox_SelectedIndexChanged);
             // 
@@ -87,9 +97,10 @@
             // 
             this.rightVideoPanel.Controls.Add(this.rightFullSizeButton);
             this.rightVideoPanel.Controls.Add(this.rightCameraComboBox);
-            this.rightVideoPanel.Location = new System.Drawing.Point(1025, 99);
+            this.rightVideoPanel.Location = new System.Drawing.Point(769, 80);
+            this.rightVideoPanel.Margin = new System.Windows.Forms.Padding(2);
             this.rightVideoPanel.Name = "rightVideoPanel";
-            this.rightVideoPanel.Size = new System.Drawing.Size(1000, 558);
+            this.rightVideoPanel.Size = new System.Drawing.Size(750, 453);
             this.rightVideoPanel.TabIndex = 2;
             // 
             // rightFullSizeButton
@@ -98,9 +109,10 @@
             this.rightFullSizeButton.BackgroundImage = global::WindowsRobotControl.Properties.Resources.fullsize_right;
             this.rightFullSizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rightFullSizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rightFullSizeButton.Location = new System.Drawing.Point(814, 3);
+            this.rightFullSizeButton.Location = new System.Drawing.Point(610, 2);
+            this.rightFullSizeButton.Margin = new System.Windows.Forms.Padding(2);
             this.rightFullSizeButton.Name = "rightFullSizeButton";
-            this.rightFullSizeButton.Size = new System.Drawing.Size(50, 50);
+            this.rightFullSizeButton.Size = new System.Drawing.Size(38, 41);
             this.rightFullSizeButton.TabIndex = 1;
             this.rightFullSizeButton.UseVisualStyleBackColor = false;
             this.rightFullSizeButton.Click += new System.EventHandler(this.rightFullSizeButton_Click);
@@ -110,9 +122,10 @@
             this.rightCameraComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rightCameraComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rightCameraComboBox.FormattingEnabled = true;
-            this.rightCameraComboBox.Location = new System.Drawing.Point(867, 3);
+            this.rightCameraComboBox.Location = new System.Drawing.Point(650, 2);
+            this.rightCameraComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.rightCameraComboBox.Name = "rightCameraComboBox";
-            this.rightCameraComboBox.Size = new System.Drawing.Size(130, 44);
+            this.rightCameraComboBox.Size = new System.Drawing.Size(98, 37);
             this.rightCameraComboBox.TabIndex = 0;
             this.rightCameraComboBox.SelectedIndexChanged += new System.EventHandler(this.rightCameraComboBox_SelectedIndexChanged);
             // 
@@ -122,9 +135,10 @@
             this.galleryButton.BackgroundImage = global::WindowsRobotControl.Properties.Resources.gallery1;
             this.galleryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.galleryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.galleryButton.Location = new System.Drawing.Point(1788, 12);
+            this.galleryButton.Location = new System.Drawing.Point(1341, 10);
+            this.galleryButton.Margin = new System.Windows.Forms.Padding(2);
             this.galleryButton.Name = "galleryButton";
-            this.galleryButton.Size = new System.Drawing.Size(50, 50);
+            this.galleryButton.Size = new System.Drawing.Size(38, 41);
             this.galleryButton.TabIndex = 5;
             this.galleryButton.UseVisualStyleBackColor = false;
             this.galleryButton.Click += new System.EventHandler(this.galleryButton_Click);
@@ -135,9 +149,10 @@
             this.screenShotButton.BackgroundImage = global::WindowsRobotControl.Properties.Resources.capture1;
             this.screenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.screenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.screenShotButton.Location = new System.Drawing.Point(1676, 12);
+            this.screenShotButton.Location = new System.Drawing.Point(1257, 10);
+            this.screenShotButton.Margin = new System.Windows.Forms.Padding(2);
             this.screenShotButton.Name = "screenShotButton";
-            this.screenShotButton.Size = new System.Drawing.Size(50, 50);
+            this.screenShotButton.Size = new System.Drawing.Size(38, 41);
             this.screenShotButton.TabIndex = 4;
             this.screenShotButton.UseVisualStyleBackColor = false;
             this.screenShotButton.Click += new System.EventHandler(this.screenShotButton_Click);
@@ -148,9 +163,10 @@
             this.screenRecordButton.BackgroundImage = global::WindowsRobotControl.Properties.Resources.screen_record;
             this.screenRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.screenRecordButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.screenRecordButton.Location = new System.Drawing.Point(1732, 12);
+            this.screenRecordButton.Location = new System.Drawing.Point(1299, 10);
+            this.screenRecordButton.Margin = new System.Windows.Forms.Padding(2);
             this.screenRecordButton.Name = "screenRecordButton";
-            this.screenRecordButton.Size = new System.Drawing.Size(50, 50);
+            this.screenRecordButton.Size = new System.Drawing.Size(38, 41);
             this.screenRecordButton.TabIndex = 2;
             this.screenRecordButton.UseVisualStyleBackColor = false;
             this.screenRecordButton.Click += new System.EventHandler(this.screenRecordButton_Click);
@@ -162,9 +178,10 @@
             this.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.refreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshButton.ForeColor = System.Drawing.Color.Transparent;
-            this.refreshButton.Location = new System.Drawing.Point(991, 102);
+            this.refreshButton.Location = new System.Drawing.Point(743, 83);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(50, 50);
+            this.refreshButton.Size = new System.Drawing.Size(38, 41);
             this.refreshButton.TabIndex = 3;
             this.refreshButton.UseVisualStyleBackColor = false;
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
@@ -172,9 +189,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsRobotControl.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(790, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(592, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(464, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(348, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -226,7 +244,8 @@
             this.videoCapture1.DV_Decoder_Video_Resolution = VisioForge.Types.VFDVVideoResolution.Full;
             this.videoCapture1.Face_Tracking = null;
             this.videoCapture1.IP_Camera_Source = null;
-            this.videoCapture1.Location = new System.Drawing.Point(1260, 37);
+            this.videoCapture1.Location = new System.Drawing.Point(945, 30);
+            this.videoCapture1.Margin = new System.Windows.Forms.Padding(2);
             this.videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
             this.videoCapture1.Motion_Detection = null;
             this.videoCapture1.Motion_DetectionEx = null;
@@ -258,7 +277,7 @@
             this.videoCapture1.SeparateCapture_GMFMode = true;
             this.videoCapture1.SeparateCapture_Mode = VisioForge.Types.VFSeparateCaptureMode.Normal;
             this.videoCapture1.SeparateCapture_TimeThreshold = System.TimeSpan.Parse("00:00:00");
-            this.videoCapture1.Size = new System.Drawing.Size(10, 15);
+            this.videoCapture1.Size = new System.Drawing.Size(8, 12);
             this.videoCapture1.Start_DelayEnabled = false;
             this.videoCapture1.StatusOverlay = null;
             this.videoCapture1.TabIndex = 6;
@@ -305,10 +324,10 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(499, 663);
+            this.listBox1.Location = new System.Drawing.Point(479, 538);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(997, 356);
+            this.listBox1.Size = new System.Drawing.Size(363, 290);
             this.listBox1.TabIndex = 7;
             // 
             // robotBatteryButton
@@ -319,10 +338,11 @@
             this.robotBatteryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.robotBatteryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.robotBatteryButton.ForeColor = System.Drawing.Color.Lime;
-            this.robotBatteryButton.Location = new System.Drawing.Point(1844, 9);
+            this.robotBatteryButton.Location = new System.Drawing.Point(1383, 7);
+            this.robotBatteryButton.Margin = new System.Windows.Forms.Padding(2);
             this.robotBatteryButton.Name = "robotBatteryButton";
-            this.robotBatteryButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 25);
-            this.robotBatteryButton.Size = new System.Drawing.Size(62, 84);
+            this.robotBatteryButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.robotBatteryButton.Size = new System.Drawing.Size(46, 68);
             this.robotBatteryButton.TabIndex = 8;
             this.robotBatteryButton.Text = "??";
             this.robotBatteryButton.UseVisualStyleBackColor = false;
@@ -335,20 +355,126 @@
             this.panelBatteryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.panelBatteryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelBatteryButton.ForeColor = System.Drawing.Color.Lime;
-            this.panelBatteryButton.Location = new System.Drawing.Point(1912, 9);
+            this.panelBatteryButton.Location = new System.Drawing.Point(1434, 7);
+            this.panelBatteryButton.Margin = new System.Windows.Forms.Padding(2);
             this.panelBatteryButton.Name = "panelBatteryButton";
-            this.panelBatteryButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 25);
-            this.panelBatteryButton.Size = new System.Drawing.Size(62, 84);
+            this.panelBatteryButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.panelBatteryButton.Size = new System.Drawing.Size(46, 68);
             this.panelBatteryButton.TabIndex = 9;
             this.panelBatteryButton.Text = "??";
             this.panelBatteryButton.UseVisualStyleBackColor = false;
             // 
+            // shoulderButton
+            // 
+            this.shoulderButton.BackColor = System.Drawing.Color.Lime;
+            this.shoulderButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.shoulderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.shoulderButton.ForeColor = System.Drawing.Color.Black;
+            this.shoulderButton.Location = new System.Drawing.Point(39, 672);
+            this.shoulderButton.Name = "shoulderButton";
+            this.shoulderButton.Size = new System.Drawing.Size(151, 49);
+            this.shoulderButton.TabIndex = 11;
+            this.shoulderButton.Text = "SHOULDER";
+            this.shoulderButton.UseVisualStyleBackColor = false;
+            this.shoulderButton.Click += new System.EventHandler(this.shoulderButton_Click);
+            // 
+            // elbowButton
+            // 
+            this.elbowButton.BackColor = System.Drawing.Color.Lime;
+            this.elbowButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.elbowButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.elbowButton.ForeColor = System.Drawing.Color.Black;
+            this.elbowButton.Location = new System.Drawing.Point(39, 753);
+            this.elbowButton.Name = "elbowButton";
+            this.elbowButton.Size = new System.Drawing.Size(151, 48);
+            this.elbowButton.TabIndex = 12;
+            this.elbowButton.Text = "ELBOW";
+            this.elbowButton.UseVisualStyleBackColor = false;
+            this.elbowButton.Click += new System.EventHandler(this.elbowButton_Click);
+            // 
+            // turretButton
+            // 
+            this.turretButton.BackColor = System.Drawing.Color.Lime;
+            this.turretButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.turretButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.turretButton.ForeColor = System.Drawing.Color.Black;
+            this.turretButton.Location = new System.Drawing.Point(39, 599);
+            this.turretButton.Name = "turretButton";
+            this.turretButton.Size = new System.Drawing.Size(151, 47);
+            this.turretButton.TabIndex = 13;
+            this.turretButton.Text = "TURRET";
+            this.turretButton.UseVisualStyleBackColor = false;
+            this.turretButton.Click += new System.EventHandler(this.turretButton_Click);
+            // 
+            // clampButton
+            // 
+            this.clampButton.BackColor = System.Drawing.Color.Lime;
+            this.clampButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clampButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.clampButton.ForeColor = System.Drawing.Color.Black;
+            this.clampButton.Location = new System.Drawing.Point(1257, 561);
+            this.clampButton.Name = "clampButton";
+            this.clampButton.Size = new System.Drawing.Size(137, 45);
+            this.clampButton.TabIndex = 14;
+            this.clampButton.Text = "CLAMP";
+            this.clampButton.UseVisualStyleBackColor = false;
+            this.clampButton.Click += new System.EventHandler(this.clampButton_Click);
+            // 
+            // parkmodeButton
+            // 
+            this.parkmodeButton.BackColor = System.Drawing.Color.Lime;
+            this.parkmodeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.parkmodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.parkmodeButton.ForeColor = System.Drawing.Color.Black;
+            this.parkmodeButton.Location = new System.Drawing.Point(1257, 687);
+            this.parkmodeButton.Name = "parkmodeButton";
+            this.parkmodeButton.Size = new System.Drawing.Size(137, 48);
+            this.parkmodeButton.TabIndex = 15;
+            this.parkmodeButton.Text = "PARK MODE";
+            this.parkmodeButton.UseVisualStyleBackColor = false;
+            this.parkmodeButton.Click += new System.EventHandler(this.ptzButton_Click);
+            // 
+            // ptzButton
+            // 
+            this.ptzButton.BackColor = System.Drawing.Color.Lime;
+            this.ptzButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ptzButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ptzButton.ForeColor = System.Drawing.Color.Black;
+            this.ptzButton.Location = new System.Drawing.Point(1257, 626);
+            this.ptzButton.Name = "ptzButton";
+            this.ptzButton.Size = new System.Drawing.Size(137, 43);
+            this.ptzButton.TabIndex = 16;
+            this.ptzButton.Text = "PTZ";
+            this.ptzButton.UseVisualStyleBackColor = false;
+            this.ptzButton.Click += new System.EventHandler(this.parkmodeButton_Click);
+            // 
+            // wristButton
+            // 
+            this.wristButton.BackColor = System.Drawing.Color.Lime;
+            this.wristButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.wristButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wristButton.ForeColor = System.Drawing.Color.Black;
+            this.wristButton.Location = new System.Drawing.Point(1257, 753);
+            this.wristButton.Name = "wristButton";
+            this.wristButton.Size = new System.Drawing.Size(137, 43);
+            this.wristButton.TabIndex = 17;
+            this.wristButton.Text = "WRIST";
+            this.wristButton.UseVisualStyleBackColor = false;
+            this.wristButton.Click += new System.EventHandler(this.wristButton_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ClientSize = new System.Drawing.Size(2044, 1033);
+            this.ClientSize = new System.Drawing.Size(1548, 839);
+            this.Controls.Add(this.wristButton);
+            this.Controls.Add(this.ptzButton);
+            this.Controls.Add(this.parkmodeButton);
+            this.Controls.Add(this.clampButton);
+            this.Controls.Add(this.turretButton);
+            this.Controls.Add(this.elbowButton);
+            this.Controls.Add(this.shoulderButton);
             this.Controls.Add(this.panelBatteryButton);
             this.Controls.Add(this.robotBatteryButton);
             this.Controls.Add(this.listBox1);
@@ -362,11 +488,12 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Lime;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Robot Control App";
-            this.TransparencyKey = System.Drawing.Color.DarkGray;
+            this.TransparencyKey = System.Drawing.Color.Gray;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.leftVideoPanel.ResumeLayout(false);
@@ -393,6 +520,13 @@
         public System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.Button robotBatteryButton;
         public System.Windows.Forms.Button panelBatteryButton;
+        private System.Windows.Forms.Button shoulderButton;
+        private System.Windows.Forms.Button elbowButton;
+        private System.Windows.Forms.Button turretButton;
+        private System.Windows.Forms.Button clampButton;
+        private System.Windows.Forms.Button parkmodeButton;
+        private System.Windows.Forms.Button ptzButton;
+        private System.Windows.Forms.Button wristButton;
     }
 }
 
