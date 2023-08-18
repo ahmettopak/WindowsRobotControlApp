@@ -23,18 +23,25 @@ namespace WindowsRobotControl
 {
     public partial class Form1 : Form
     {
-        private bool isTurret = true;
-        private bool isShoulder = true;
-        private bool isElbow = true;
-        private bool isClamp = true;
-        private bool isPtz = true;
-        private bool isParkMode = true;
-        private bool isWrist = true;
+        //Arm button
+        private bool isTurret = false;
+        private bool isShoulder = false;
+        private bool isElbow = false;
+        private bool isClamp = false;
+        private bool isPtz = false;
+        private bool isParkMode = false;
+        private bool isWrist = false;
+
+        //Lights
+        private bool isLightMenu = false;
+        private bool isFrontLight = false;
+        private bool isBackLight = false;
+        private bool isArmLight = false;
+        private bool isAimLight = false;
 
 
 
         UdpReceiver udpReceiver;
-        ComputerBatteryController computerBatteryController;
         
         public Form1()
         {
@@ -43,20 +50,10 @@ namespace WindowsRobotControl
 
         }
 
-     
-
-
-
-
-  
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Form1_Click(object sender, EventArgs e)
         {
+            lightMenu.Visible = false;
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -64,17 +61,21 @@ namespace WindowsRobotControl
             
 
             ScreenUtil = new ScreenUtil(this);
-            computerBatteryController = new ComputerBatteryController(this);
+            _ = new ComputerBatteryController(this);
         
             udpReceiver = new UdpReceiver(this);
             udpReceiver.StartListening();
-            
+
             //InitializeController();
             //SetupControllerTimer();
 
             //Right Video View Full Size
             //panel1.SendToBack();
             //panel1.Size = this.ClientSize;
+
+
+
+           
         }
 
 
@@ -317,6 +318,185 @@ namespace WindowsRobotControl
         // button control
         #endregion
 
+
+        #region Arm Toggle Button
+        
+        private void deselectShoulderGroup()
+        {
+            DeselectButton(turretButton);
+            DeselectButton(shoulderButton);
+            DeselectButton(elbowButton);
+        }
+        private void deselectWristGroup()
+        {
+            DeselectButton(clampButton);
+            DeselectButton(ptzButton);
+            DeselectButton(wristButton);
+        }
+        private void turretButton_Click(object sender, EventArgs e)
+        {
+            if (isTurret)
+            {
+                DeselectButton(turretButton);
+            }
+            else
+            {
+                SelectButton(turretButton);
+            }
+            deselectWristGroup();
+        }
+        private void shoulderButton_Click(object sender, EventArgs e)
+        {
+            if (isShoulder)
+            {
+                DeselectButton(shoulderButton);
+            }
+            else
+            {
+                SelectButton(shoulderButton);
+
+            }
+            deselectWristGroup();
+        }
+        private void elbowButton_Click(object sender, EventArgs e)
+        {
+            if (isElbow)
+            {
+                DeselectButton(elbowButton);
+
+            }
+            else
+            {
+                SelectButton(elbowButton);
+            }
+            deselectWristGroup();
+        }
+        private void clampButton_Click(object sender, EventArgs e)
+        {
+
+            if (isClamp)
+            {
+                
+                DeselectButton(clampButton);
+            }
+            else
+            {
+                SelectButton(clampButton);
+
+            }
+            deselectShoulderGroup();
+            DeselectButton(wristButton);
+            DeselectButton(ptzButton);
+
+
+
+        }
+        private void ptzButton_Click(object sender, EventArgs e)
+        {
+            if (isPtz)
+            {
+                
+                DeselectButton(ptzButton);
+            }
+            else
+
+            {
+
+                SelectButton(ptzButton);
+
+            }
+            deselectShoulderGroup();
+            DeselectButton(wristButton);
+            DeselectButton(clampButton);
+        }
+        private void wristButton_Click(object sender, EventArgs e)
+        {
+            if (isWrist)
+            {
+                DeselectButton(wristButton);
+            }
+            else
+            {
+                SelectButton(wristButton);
+            }
+            deselectShoulderGroup();
+            DeselectButton(ptzButton);
+            DeselectButton(clampButton);
+        }
+        #endregion
+
+
+        #region Light Menu
+        private void frontLightButton_Click(object sender, EventArgs e)
+        {
+            if (isFrontLight)
+            {
+                DeselectButton(frontLightButton);
+            }
+            else
+            {
+                SelectButton(frontLightButton);
+            }
+        }
+
+        private void backLightButton_Click(object sender, EventArgs e)
+        {
+            if (isBackLight)
+            {
+                DeselectButton(backLightButton);
+            }
+            else
+            {
+                SelectButton(backLightButton);
+            }
+        }
+
+        private void armLightButton_Click(object sender, EventArgs e)
+        {
+            if (isArmLight)
+            {
+                DeselectButton(armLightButton);
+            }
+            else
+            {
+                SelectButton(armLightButton);
+            }
+        }
+
+        private void aimLightButton_Click(object sender, EventArgs e)
+        {
+            if (isAimLight)
+            {
+                DeselectButton(aimLightButton);
+            }
+            else
+            {
+                SelectButton(aimLightButton);
+            }
+        }
+
+        private void ptzLightTrackBar_Scroll(object sender, EventArgs e)
+        {
+            ptzLightLabel.Text = "PTZ " + ptzLightTrackBar.Value;
+        }
+
+        private void openLightMenuButton_Click(object sender, EventArgs e)
+        {
+            if (isLightMenu)
+            {
+                DeselectButton(openLightMenuButton);
+                lightMenu.Visible = false;
+            }
+            else
+            {
+                SelectButton(openLightMenuButton);
+                lightMenu.Visible = true;
+
+            }
+        }
+
+        #endregion
+
         private void DeselectButton(Button button)
         {
 
@@ -346,6 +526,28 @@ namespace WindowsRobotControl
                 isPtz = false;
             }
 
+            //Light 
+            else if (button == openLightMenuButton)
+            {
+                isLightMenu = false;
+            }
+            else if (button == frontLightButton)
+            {
+                isFrontLight = false;
+            }
+            else if (button == backLightButton)
+            {
+                isBackLight = false;
+            }
+            else if (button == armLightButton)
+            {
+                isArmLight = false;
+            }
+            else if (button == aimLightButton)
+            {
+                isAimLight = false;
+            }
+
             button.BackColor = Color.Lime;
             button.ForeColor = Color.Black;
         }
@@ -353,7 +555,7 @@ namespace WindowsRobotControl
         {
             if (button == turretButton)
             {
-                isTurret = false;
+                isTurret = true;
 
             }
             else if (button == shoulderButton)
@@ -376,110 +578,38 @@ namespace WindowsRobotControl
             {
                 isPtz = true;
             }
+
+            //Light
+            else if (button == openLightMenuButton)
+            {
+                isLightMenu = true;
+            }
+            else if (button == frontLightButton)
+            {
+                isFrontLight = true;
+            }
+            else if (button == backLightButton)
+            {
+                isBackLight = true;
+            }
+            else if (button == armLightButton)
+            {
+                isArmLight = true;
+            }
+            else if (button == aimLightButton)
+            {
+                isAimLight = true;
+            }
             button.BackColor = Color.Red;
             button.ForeColor = Color.White;
         }
-        private void deselectShoulderGroup()
+
+       
+        private void Form1_Click_1(object sender, EventArgs e)
         {
-            DeselectButton(turretButton);
-            DeselectButton(shoulderButton);
-            DeselectButton(elbowButton);
-        }
-        private void deselectWristGroup()
-        {
-            DeselectButton(clampButton);
-            DeselectButton(ptzButton);
-            DeselectButton(wristButton);
-        }
-        private void turretButton_Click(object sender, EventArgs e)
-        {
-            if (!isTurret)
-            {
-                SelectButton(turretButton);
-            }
-            else
-            {
-                DeselectButton(turretButton);
-            }
-            deselectWristGroup();
-        }
-        private void shoulderButton_Click(object sender, EventArgs e)
-        {
-            if (!isShoulder)
-            {
-                SelectButton(shoulderButton);
-            }
-            else
-            {
-                DeselectButton(shoulderButton);
-
-            }
-            deselectWristGroup();
-        }
-        private void elbowButton_Click(object sender, EventArgs e)
-        {
-            if (!isElbow)
-            {
-                SelectButton(elbowButton);
-
-            }
-            else
-            {
-                DeselectButton(elbowButton);
-            }
-            deselectWristGroup();
-        }
-        private void clampButton_Click(object sender, EventArgs e)
-        {
-
-            if (!isClamp)
-            {
-                SelectButton(clampButton);
-
-            }
-            else
-            {
-                DeselectButton(clampButton);
-
-            }
-            deselectShoulderGroup();
-            DeselectButton(wristButton);
-            DeselectButton(ptzButton);
-
-            
-            
-        }
-        private void ptzButton_Click(object sender, EventArgs e)
-        {
-            if (!isPtz)
-            {
-                SelectButton(ptzButton);
-
-            }
-            else
-
-            {
-
-                DeselectButton(ptzButton);
-
-            }
-            deselectShoulderGroup();
-            DeselectButton(wristButton);
-            DeselectButton(clampButton);
-        }
-        private void wristButton_Click(object sender, EventArgs e)
-        {
-            if (!isWrist)
-            {
-                SelectButton(wristButton);
-            }
-            else
-            {
-                DeselectButton(wristButton);
-            }
-            deselectShoulderGroup();
-            DeselectButton(ptzButton);
-            DeselectButton(clampButton);
+            //Close light menu
+            DeselectButton(openLightMenuButton);
+            lightMenu.Visible = false;
         }
     }
 }
